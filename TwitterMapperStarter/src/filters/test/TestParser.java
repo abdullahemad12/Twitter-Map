@@ -1,9 +1,7 @@
-package filters.test;
-
 import filters.*;
-import org.junit.jupiter.api.Test;
+import org.junit.*;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * Test the parser.

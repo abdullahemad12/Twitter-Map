@@ -44,10 +44,10 @@ public class LiveTwitterSource extends TwitterSource {
     // Create ConfigurationBuilder and pass in necessary credentials to authorize properly, then create TwitterStream.
     private void initializeTwitterStream() {
         ConfigurationBuilder cb = new ConfigurationBuilder();
-        cb.setOAuthConsumerKey("Yt8nu9oBskoRMnKYUWp22BDam")
-                .setOAuthConsumerSecret("F7MaPDZs1YYBBTsxvgTV9hYikuD9ydTv5NOcxtAXCWcfUhVgcc")
-                .setOAuthAccessToken("910973574550192128-CW2RGcxU4COOEYiwbM1G1qewrB5iFWO")
-                .setOAuthAccessTokenSecret("2Rr5xYnH8odDCFlyhWE5fzA5Y9JYVGqPECijjmzaUuuzt");
+        cb.setOAuthConsumerKey("wIF3Vw72MVshsQEw4mpfBH0Ya")
+                .setOAuthConsumerSecret("WEKmiZNwvQMA5g7nwClrj4NW5UjS06xj1AIZ9lLTBTgxx9Jdlb ")
+                .setOAuthAccessToken("1126491781674221569-UsRTPeF26uo2G9T9KIxIWsdyZp02WI")
+                .setOAuthAccessTokenSecret("VegmcYzWwJqaWdjStd8nGNUAW7TcaA05WnKUQR4cq9fiU");
 
         // Pass the ConfigurationBuilder in when constructing TwitterStreamFactory.
         twitterStream = new TwitterStreamFactory(cb.build()).getInstance();

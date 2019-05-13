@@ -1,6 +1,6 @@
 package util.test;
 
-import org.junit.jupiter.api.Test;
+import org.junit.*;
 import util.Util;
 
 import java.awt.image.BufferedImage;

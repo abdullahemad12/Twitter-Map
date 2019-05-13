@@ -1,13 +1,11 @@
-package filters.test;
 
 import filters.*;
-import org.junit.jupiter.api.Test;
+import org.junit.*;
 import twitter4j.*;
 
 import java.util.Date;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.*;
 
 
 public class TestFilters {
