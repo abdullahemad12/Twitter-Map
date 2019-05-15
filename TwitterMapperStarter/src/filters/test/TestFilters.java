@@ -27,6 +27,54 @@ public class TestFilters {
         assertTrue(f.matches(makeStatus("red Skelton")));
     }
 
+    @Test
+    public void testAnd(){
+        /*tests the following expression*/
+        // exp1 ^ exp2 ^ exp3 ^ \exp4 ^ \(exp5 ^ exp6)
+
+        Filter exp1 = new BasicFilter("melody");
+        Filter exp2 = new BasicFilter("mia");
+        Filter exp3 = new BasicFilter("mira");
+        Filter exp4 = new BasicFilter("mariam");
+        Filter exp5 = new BasicFilter("rasha");
+        Filter exp6 = new BasicFilter("emad");
+
+        Filter exp12 = new AndFilter(exp1, exp2);
+        Filter exp123 = new AndFilter(exp12, exp3);
+        Filter notExp4 = new NotFilter(exp4);
+        Filter exp56 = new AndFilter(exp5, exp6);
+        Filter notExp56 = new NotFilter(exp56);
+        Filter exp123not4 = new AndFilter(exp123, notExp4);
+        Filter f = new AndFilter(exp123not4, notExp56);
+
+
+        assertTrue(f.matches(makeStatus("melody, mira, mia are good cats and rasha feeds them")));
+
+        assertTrue(f.matches(makeStatus("melody, mira and mia wants a slap on their face by emad")));
+        assertFalse(f.matches(makeStatus("melody, mira and mia wants a slap on their face by mariam")));
+
+        assertFalse(f.matches(makeStatus("melody, mira and mia wants a slap on their face by rasha and emad")));
+
+        assertEquals(f.toString(), "((((melody and mia) and mira) and not mariam) and not (rasha and emad))");
+    }
+    @Test
+    public void orTest(){
+        Filter exp1 = new BasicFilter("melody");
+        Filter exp2 = new BasicFilter("mira");
+        Filter exp3 = new BasicFilter("mia");
+
+        Filter exp12 = new OrFilter(exp1, exp2);
+        Filter f = new OrFilter(exp12, exp3);
+
+
+        assertTrue(f.matches(makeStatus("melody is a good cat")));
+        assertTrue(f.matches(makeStatus("mira and mia are not that good")));
+        assertTrue(f.matches(makeStatus("melody, mira and mia are cats")));
+        assertFalse(f.matches(makeStatus("emad is my father")));
+
+        assertEquals(f.toString(), "((melody or mira) or mia)");
+    }
+
     private Status makeStatus(String text) {
         return new Status() {
             @Override
