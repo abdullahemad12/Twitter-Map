@@ -45,7 +45,7 @@ public class LiveTwitterSource extends TwitterSource {
     private void initializeTwitterStream() {
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setOAuthConsumerKey("wIF3Vw72MVshsQEw4mpfBH0Ya")
-                .setOAuthConsumerSecret("WEKmiZNwvQMA5g7nwClrj4NW5UjS06xj1AIZ9lLTBTgxx9Jdlb ")
+                .setOAuthConsumerSecret("WEKmiZNwvQMA5g7nwClrj4NW5UjS06xj1AIZ9lLTBTgxx9Jdlb")
                 .setOAuthAccessToken("1126491781674221569-UsRTPeF26uo2G9T9KIxIWsdyZp02WI")
                 .setOAuthAccessTokenSecret("VegmcYzWwJqaWdjStd8nGNUAW7TcaA05WnKUQR4cq9fiU");
 
