@@ -61,7 +61,7 @@ public class Parser {
             Filter right = andexpr();
             // At this point we have two subexpressions ("sub" on the left and "right" on the right)
             // that are to be connected by "or"
-            // TODO: Construct the appropriate new Filter object
+            sub = new OrFilter(sub, right);
             // The new filter object should be assigned to the variable "sub"
             token = scanner.peek();
         }
@@ -76,7 +76,7 @@ public class Parser {
             Filter right = notexpr();
             // At this point we have two subexpressions ("sub" on the left and "right" on the right)
             // that are to be connected by "and"
-            // TODO: Construct the appropriate new Filter object
+            sub = new AndFilter(sub, right);
             // The new filter object should be assigned to the variable "sub"
             token = scanner.peek();
         }
