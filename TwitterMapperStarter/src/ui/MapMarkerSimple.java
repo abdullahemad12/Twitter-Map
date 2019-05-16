@@ -12,7 +12,7 @@ public class MapMarkerSimple extends MapMarkerCircle {
 
     public MapMarkerSimple(Layer layer, Coordinate coord) {
         super(layer, null, coord, defaultMarkerSize, STYLE.FIXED, getDefaultStyle());
-        setColor(Color.BLACK);
+        setColor(Color.WHITE);
         setBackColor(defaultColor);
     }
 }

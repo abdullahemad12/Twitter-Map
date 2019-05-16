@@ -4,8 +4,10 @@ import filters.Filter;
 import org.openstreetmap.gui.jmapviewer.Coordinate;
 import org.openstreetmap.gui.jmapviewer.JMapViewer;
 import org.openstreetmap.gui.jmapviewer.Layer;
+import org.openstreetmap.gui.jmapviewer.interfaces.ICoordinate;
 import org.openstreetmap.gui.jmapviewer.interfaces.MapObject;
 import twitter4j.Status;
+import ui.MapMarker;
 import ui.MapMarkerSimple;
 import util.Util;
 
@@ -33,7 +35,7 @@ public class Query implements Observer {
     private final Filter filter;
     // The checkBox in the UI corresponding to this query (so we can turn it on and off and delete it)
     private JCheckBox checkBox;
-    private List<MapMarkerSimple> markers = new ArrayList<>();
+    private List<MapMarker> markers = new ArrayList<>();
 
 
 
@@ -73,13 +75,19 @@ public class Query implements Observer {
         return "Query: " + queryString;
     }
 
+    public void showMarkerInfo(ICoordinate coord){
+        for(MapMarker marker : markers){
+            marker.showInfo(coord);
+        }
+    }
+
     /**
      * This query is no longer interesting, so terminate it and remove all traces of its existence.
      *
      * TODO: Implement this method
      */
     public void terminate() {
-        for(MapMarkerSimple marker : markers) {
+        for(MapMarker marker : markers) {
             map.removeMapMarker(marker);
         }
         markers.clear();
@@ -90,9 +98,15 @@ public class Query implements Observer {
         Status status = (Status) o;
         if(filter.matches(status)){
             Coordinate coordinate = Util.statusCoordinate(status);
-            MapMarkerSimple marker = new MapMarkerSimple(layer, coordinate);
-            map.addMapMarker(marker);
-            markers.add(marker);
+            try{
+                MapMarker marker = new MapMarker(color, status, layer, coordinate);
+                map.addMapMarker(marker);
+                markers.add(marker);
+            }
+            catch(Exception e){
+
+            }
+
         }
     }
 }
