@@ -1,5 +1,6 @@
 package ui;
 
+import org.openstreetmap.gui.jmapviewer.JMapViewer;
 import org.openstreetmap.gui.jmapviewer.Layer;
 import org.openstreetmap.gui.jmapviewer.Coordinate;
 import org.openstreetmap.gui.jmapviewer.interfaces.ICoordinate;
@@ -10,27 +11,29 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Observable;
 
-public class MapMarker extends MapMarkerSimple{
+public class MapMarker extends MapMarkerSimple {
 
     private Status status;
-    private Coordinate coord;
-    private Image image;
     private boolean viewInfo;
+    private Image image;
     public MapMarker(Color color, Status status, Layer layer, Coordinate coord) throws IOException {
         super(layer, coord);
         this.setBackColor(color);
         this.status = status;
-        this.coord = coord;
-        URL imageURL = new URL(status.getUser().getMiniProfileImageURL());
+        image = ImageIO.read(new URL(status.getUser().getBiggerProfileImageURL()));
     }
 
-    public void showInfo(ICoordinate coord){
-        double distance = SphericalGeometry.distanceBetween(coord, this.coord);
+    public void showInfo(ICoordinate coord, JMapViewer map){
+        double distance = SphericalGeometry.distanceBetween(coord, this.getCoordinate());
         if(distance * 0.00005 < this.getRadius()){
+            if(!viewInfo) this.notifyObservers();
             viewInfo = true;
+            map.setToolTipText(status.getText());
         }
         else{
+            if(viewInfo) notifyObservers();
             viewInfo = false;
         }
     }
@@ -47,7 +50,6 @@ public class MapMarker extends MapMarkerSimple{
         else{
             super.paint(g, position, radio);
         }
-
 
     }
 

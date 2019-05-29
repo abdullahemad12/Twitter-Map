@@ -14,7 +14,6 @@ public class ContentPanel extends JPanel {
     private JPanel newQueryPanel;
     private JPanel existingQueryList;
     private JMapViewer map;
-
     private Application app;
 
     public ContentPanel(Application app) {
@@ -64,7 +63,7 @@ public class ContentPanel extends JPanel {
         removeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                app.terminateQuery(query);
+                app.getQueryManager().terminateQuery(query);
                 query.terminate();
                 existingQueryList.remove(newQueryPanel);
                 revalidate();

@@ -3,8 +3,12 @@ package twitter;
 import twitter4j.Status;
 import util.ImageCache;
 
-import java.util.*;
-
+import java.util.Set;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Collection;
+import java.util.ArrayList;
+import observer.*;
 
 public abstract class TwitterSource extends Observable{
     protected boolean doLogging = true;
@@ -35,7 +39,6 @@ public abstract class TwitterSource extends Observable{
     // TODO: Each active query should be informed about each incoming tweet so that
     //       it can determine whether the tweet should be displayed
     protected void handleTweet(Status s) {
-        setChanged();
         notifyObservers(s);
     }
 }

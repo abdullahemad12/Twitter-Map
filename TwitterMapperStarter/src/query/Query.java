@@ -7,6 +7,7 @@ import org.openstreetmap.gui.jmapviewer.Layer;
 import org.openstreetmap.gui.jmapviewer.interfaces.ICoordinate;
 import org.openstreetmap.gui.jmapviewer.interfaces.MapObject;
 import twitter4j.Status;
+import ui.Application;
 import ui.MapMarker;
 import ui.MapMarkerSimple;
 import util.Util;
@@ -15,8 +16,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
-import java.util.Observer;
+import observer.*;
 
 /**
  * A query over the twitter stream.
@@ -36,7 +36,7 @@ public class Query implements Observer {
     // The checkBox in the UI corresponding to this query (so we can turn it on and off and delete it)
     private JCheckBox checkBox;
     private List<MapMarker> markers = new ArrayList<>();
-
+    private Application app;
 
 
     public Color getColor() {
@@ -62,12 +62,14 @@ public class Query implements Observer {
     }
     public boolean getVisible() { return layer.isVisible(); }
 
-    public Query(String queryString, Color color, JMapViewer map) {
+    public Query(String queryString, Color color, Application app) {
         this.queryString = queryString;
         this.filter = Filter.parse(queryString);
         this.color = color;
         this.layer = new Layer(queryString);
-        this.map = map;
+        this.app = app;
+        this.map = app.map();
+
     }
 
     @Override
@@ -77,7 +79,7 @@ public class Query implements Observer {
 
     public void showMarkerInfo(ICoordinate coord){
         for(MapMarker marker : markers){
-            marker.showInfo(coord);
+            marker.showInfo(coord, map);
         }
     }
 
@@ -100,11 +102,12 @@ public class Query implements Observer {
             Coordinate coordinate = Util.statusCoordinate(status);
             try{
                 MapMarker marker = new MapMarker(color, status, layer, coordinate);
+                marker.addObserver(app);
                 map.addMapMarker(marker);
                 markers.add(marker);
             }
             catch(Exception e){
-
+                e.printStackTrace();
             }
 
         }

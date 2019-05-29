@@ -1,6 +1,7 @@
 package ui;
 
 import query.Query;
+import query.QueryManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -101,8 +102,8 @@ public class NewQueryPanel extends JPanel {
     }
 
     private void addQuery(String newQuery) {
-        Query query = new Query(newQuery, colorSetter.getBackground(), app.map());
-        app.addQuery(query);
+        Query query = new Query(newQuery, colorSetter.getBackground(), app);
+        app.getQueryManager().addQuery(query);
         colorSetter.setBackground(getRandomColor());
     }
 

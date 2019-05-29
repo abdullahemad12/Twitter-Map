@@ -4,9 +4,8 @@ import twitter.PlaybackTwitterSource;
 import twitter4j.Status;
 
 import java.util.HashSet;
-import java.util.Observable;
-import java.util.Observer;
 import java.util.Set;
+import observer.*;
 
 import static org.junit.Assert.*;
 
@@ -20,7 +19,7 @@ public class TestPlaybackTwitterSource {
         PlaybackTwitterSource source = new PlaybackTwitterSource(1.0);
         TestObserver to = new TestObserver();
         // TODO: Once your TwitterSource class implements Observable, you must add the TestObserver as an observer to it here
-        source.addObserver(to);
+        source.subscribe(to);
         source.setFilterTerms(set("food"));
         pause(3 * 1000);
         assertTrue(to.getNTweets() > 0);
