@@ -1,29 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="493994da-a99d-4ffa-a55c-69e7a7e63e85" name="Default" comment="Fix the live twitter source">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TwitterMapperStarter/src/observer/Observable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TwitterMapperStarter/src/observer/Observer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TwitterMapperStarter/src/query/QueryManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TwitterMapperStarter/src/util/ColorSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/out/TestPlaybackTwitterSource$TestObserver.class" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/out/TestPlaybackTwitterSource$TestObserver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/out/TestPlaybackTwitterSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/out/TestPlaybackTwitterSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/out/query/Query.class" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/out/query/Query.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/out/twitter/PlaybackTwitterSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/out/twitter/PlaybackTwitterSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/out/twitter/TwitterSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/out/twitter/TwitterSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/MapMarkerSimple.class" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/MapMarkerSimple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/NewQueryPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/NewQueryPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/src/query/Query.java" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/src/query/Query.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/src/twitter/PlaybackTwitterSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/src/twitter/PlaybackTwitterSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/src/twitter/TwitterSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/src/twitter/TwitterSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/src/twitter/test/TestPlaybackTwitterSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/src/twitter/test/TestPlaybackTwitterSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/src/ui/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/src/ui/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/src/ui/ContentPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/src/ui/ContentPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/src/ui/MapMarker.java" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/src/ui/MapMarker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/src/ui/MapMarkerSimple.java" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/src/ui/MapMarkerSimple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/src/ui/NewQueryPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/src/ui/NewQueryPanel.java" afterDir="false" />
+    <list default="true" id="493994da-a99d-4ffa-a55c-69e7a7e63e85" name="Default" comment="Refactor code">
+      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/Application$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/Application$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/Application$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/Application$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/Application$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/Application$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/ContentPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/ContentPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/ContentPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/ContentPanel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/ContentPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/ContentPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/NewQueryPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/NewQueryPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/NewQueryPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/TwitterMapperStarter/out/ui/NewQueryPanel$2.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +26,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TwitterMapperStarter/src/ui/NewQueryPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="292">
               <caret line="105" column="29" selection-start-line="105" selection-start-column="29" selection-end-line="105" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -484,7 +471,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558019875035</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Refactor code">
+      <created>1559133001476</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1559133001477</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -521,7 +515,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25778133" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -533,7 +526,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32736155" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32736155" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39739415" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -560,7 +553,8 @@
     <MESSAGE value="Connect And and Or Filters to the parser" />
     <MESSAGE value="Map simple markers with the twitter playback" />
     <MESSAGE value="Fix the live twitter source" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix the live twitter source" />
+    <MESSAGE value="Refactor code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor code" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -941,7 +935,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TwitterMapperStarter/src/ui/NewQueryPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="292">
           <caret line="105" column="29" selection-start-line="105" selection-start-column="29" selection-end-line="105" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
